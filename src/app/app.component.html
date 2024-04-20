@@ -70,7 +70,7 @@
               </div>
               <button
                 class="button violet-button"
-                (click)="scrollTo(order)">Заказать</button>
+                (click)="scrollTo(order, product)">Заказать</button>
             </div>
 
           </div>
@@ -119,7 +119,7 @@
           </div>
           <div class="order-form-inputs" [formGroup]="form">
             <input type="text"
-              placeholder="Выберите печенье" id="product" formControlName="product" [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}">
+              placeholder="Выберите печенье" id="product" formControlName="product" [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}" readonly>
             <input type="text" placeholder="Ваше имя" id="name" formControlName="name" [class]="{'error': form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)}">
             <input type="text" placeholder="Ваш телефон" id="phone" formControlName="phone" [class]="{'error': form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched)}">
             <button class="button violet-button" id="order-action" (click)="confirmOrder()" [disabled]="!form.valid">Оформить
